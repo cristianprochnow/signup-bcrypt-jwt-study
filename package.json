@@ -1,5 +1,5 @@
 {
-  "name": "SignUpBcrypt",
+  "name": "signup-bcrypt-jwt-study",
   "version": "1.0.0",
   "main": "index.js",
   "author": "cristianprochnow <cristianprochnow@gmail.com>",
