@@ -2,6 +2,8 @@
 
 **A simple study case about how Bcrypt and JWT works in a register or authentication.**
 
+[![Run in Insomnia][imsomnia-button]][insomnia-url]
+
 ## 🧱 Made with
 
 - TypeScript
@@ -37,3 +39,6 @@
   - [x] Add JWT to login
 - [x] Create Middleware
   - [x] Translate data from token
+
+[imsomnia-button]: https://insomnia.rest/images/run.svg
+[insomnia-url]: https://insomnia.rest/run/?label=SignupBcrypt&uri=https%3A%2F%2Fgithub.com%2Fcristianprochnow%2Fsignup-bcrypt-jwt-study%2Fblob%2Fmaster%2FInsomnia.json
