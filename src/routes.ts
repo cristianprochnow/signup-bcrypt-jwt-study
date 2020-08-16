@@ -9,8 +9,8 @@ const usersController = new UsersController()
 const usersMiddleware = new UsersMiddleware()
 
 routes.get('/users', usersController.index)
+routes.get('/users/private', usersMiddleware.index, usersController.tokenView)
 routes.post('/users/signup', usersController.store)
 routes.post('/users/login', usersController.login)
-routes.get('/users/private', usersMiddleware.index, usersController.index)
 
 export { routes }

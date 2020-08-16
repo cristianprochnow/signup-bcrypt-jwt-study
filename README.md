@@ -36,3 +36,4 @@
   - [x] Add secret key
   - [x] Add JWT to login
 - [x] Create Middleware
+  - [x] Translate data from token

@@ -97,6 +97,14 @@ class UsersController {
       })
     }
   }
+
+  async tokenView (request: Request, response: Response) {
+    const { token } = request.headers
+
+    const dataFromToken = jwt.decode(token as string)
+
+    return response.json(dataFromToken)
+  }
 }
 
 export { UsersController }
