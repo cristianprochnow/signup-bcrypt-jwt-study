@@ -1,4 +1,19 @@
-# Setup
+# 📖 About
+
+**A simple study case about how Bcrypt and JWT works in an register or authentication.**
+
+## 🧱 Made with
+
+- TypeScript
+- Node
+- Express
+- Bcrypt
+- UUID
+- Knex
+- SQLite
+- Json Web Token (JWT)
+
+# 🧰 Setup
 
 - [x] Add TS setup
 - [x] Init TS
@@ -6,7 +21,7 @@
 - [x] Add ESLint
 - [x] Add database
 
-# Roadmap
+# 🛣 Roadmap
 
 - [x] Create route for Sign Up
 - [x] Improve route for Sign Up
@@ -17,4 +32,7 @@
 - [x] Store in database
 - [x] Create route for Log In
 - [] Create JWT
+  - [x] Add .env
+  - [x] Add secret key
+  - [] Add JWT to sign up
 - [] Create Middleware

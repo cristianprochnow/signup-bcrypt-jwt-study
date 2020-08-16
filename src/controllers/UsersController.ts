@@ -1,10 +1,10 @@
 import { Request, Response } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import * as bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 import { dbConnection } from '../database/connection'
 import { hashPassword } from '../utils/hashPassword'
-
 interface IUserData {
   id: string
   username: string
@@ -74,10 +74,20 @@ class UsersController {
       )
 
       if (isCorrectPassword) {
-        return response.status(200).json({
-          id: userFromDatabaseResponse.id,
-          username: userFromDatabaseResponse.username
-        })
+        const token = jwt.sign(
+          {
+            id: userFromDatabaseResponse.id,
+            username: userFromDatabaseResponse.username
+          },
+          process.env.SECRET_KEY as string,
+          {
+            expiresIn: '1h'
+          }
+        )
+
+        console.log(token)
+
+        return response.status(200).json(token)
       } else {
         throw new Error()
       }
