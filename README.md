@@ -12,8 +12,9 @@
 - [x] Improve route for Sign Up
   - [x] Add uuid
   - [x] Add Bcrypt
-  - [] Add verification for ensure that there are not two user with same username
+  - [x] Add verification for ensure that there are not two user with same username
 - [x] Process data
 - [x] Store in database
-- [] Create route for Log In
+- [x] Create route for Log In
+- [] Create JWT
 - [] Create Middleware

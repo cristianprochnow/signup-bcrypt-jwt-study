@@ -1,9 +1,15 @@
 import { Request, Response } from 'express'
 import { v4 as uuidv4 } from 'uuid'
+import * as bcrypt from 'bcrypt'
 
 import { dbConnection } from '../database/connection'
 import { hashPassword } from '../utils/hashPassword'
 
+interface IUserData {
+  id: string
+  username: string
+  password: string
+}
 class UsersController {
   async index (request: Request, response: Response) {
     const usersList = await dbConnection('users').select('*')
@@ -16,13 +22,6 @@ class UsersController {
     const userUuid = uuidv4()
 
     const hashedPassword = await hashPassword(password)
-
-    console.log({
-      userUuid,
-      username,
-      password,
-      hashedPassword
-    })
 
     try {
       const listOfUsersWithSameUsername = await dbConnection('users')
@@ -49,7 +48,45 @@ class UsersController {
         throw new Error()
       }
     } catch (error) {
-      return response.status(400).send(error)
+      console.log(error)
+
+      return response.status(400).json({
+        event: 'An error has ocorred while connecting... Please, try again later.'
+      })
+    }
+  }
+
+  async login (request: Request, response: Response) {
+    const { username, password } = request.body
+
+    try {
+      const userResponseData = await dbConnection('users')
+        .select('*')
+        .where({
+          username
+        })
+
+      const userFromDatabaseResponse: IUserData = userResponseData[0]
+
+      const isCorrectPassword = await bcrypt.compare(
+        password,
+        userFromDatabaseResponse.password
+      )
+
+      if (isCorrectPassword) {
+        return response.status(200).json({
+          id: userFromDatabaseResponse.id,
+          username: userFromDatabaseResponse.username
+        })
+      } else {
+        throw new Error()
+      }
+    } catch (error) {
+      console.log(error)
+
+      return response.status(400).json({
+        event: 'Username or password may are incorrect...'
+      })
     }
   }
 }
