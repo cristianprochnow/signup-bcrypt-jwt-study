@@ -5,11 +5,13 @@ import jwt from 'jsonwebtoken'
 
 import { dbConnection } from '../database/connection'
 import { hashPassword } from '../utils/hashPassword'
+
 interface IUserData {
   id: string
   username: string
   password: string
 }
+
 class UsersController {
   async index (request: Request, response: Response) {
     const usersList = await dbConnection('users').select('*')
