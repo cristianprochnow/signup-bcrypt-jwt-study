@@ -85,8 +85,6 @@ class UsersController {
           }
         )
 
-        console.log(token)
-
         return response.status(200).json(token)
       } else {
         throw new Error()

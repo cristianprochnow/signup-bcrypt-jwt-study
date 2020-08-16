@@ -31,8 +31,8 @@
 - [x] Process data
 - [x] Store in database
 - [x] Create route for Log In
-- [] Create JWT
+- [x] Create JWT
   - [x] Add .env
   - [x] Add secret key
-  - [] Add JWT to sign up
-- [] Create Middleware
+  - [x] Add JWT to login
+- [x] Create Middleware
