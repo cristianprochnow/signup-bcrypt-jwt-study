@@ -25,6 +25,16 @@ class UsersController {
     })
 
     try {
+      const listOfUsersWithSameUsername = await dbConnection('users')
+        .select('id')
+        .where({ username })
+
+      if (listOfUsersWithSameUsername[0]) {
+        return response.status(400).json({
+          event: 'This username already exists...'
+        })
+      }
+
       const registerResponse = await dbConnection('users').insert({
         id: userUuid,
         username,
@@ -32,7 +42,9 @@ class UsersController {
       })
 
       if (registerResponse) {
-        return response.status(201).send('User registered successfully!')
+        return response.status(201).json({
+          event: 'User registered successfully!'
+        })
       } else {
         throw new Error()
       }
