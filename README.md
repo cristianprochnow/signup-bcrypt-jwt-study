@@ -1,6 +1,6 @@
 # 📖 About
 
-**A simple study case about how Bcrypt and JWT works in an register or authentication.**
+**A simple study case about how Bcrypt and JWT works in a register or authentication.**
 
 ## 🧱 Made with
 
