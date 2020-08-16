@@ -1,10 +1,8 @@
 import knex from 'knex'
+import path from 'path'
 
-const dbConnection = knex({
-  client: 'sqlite',
-  connection: {
-    filename: './database.sqlite'
-  }
-})
+const knexConfig = require('../../knexfile')
+
+const dbConnection = knex(knexConfig.development)
 
 export { dbConnection }

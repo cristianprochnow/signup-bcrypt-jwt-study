@@ -4,7 +4,7 @@
 - [x] Init TS
 - [x] Add `ts-node-dev` script
 - [x] Add ESLint
-- [] Add database
+- [x] Add database
 
 # Roadmap
 
