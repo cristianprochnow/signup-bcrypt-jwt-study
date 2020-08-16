@@ -1,5 +1,8 @@
 import { Request, Response } from 'express'
+import { v4 as uuidv4 } from 'uuid'
+
 import { dbConnection } from '../database/connection'
+import { hashPassword } from '../utils/hashPassword'
 
 class UsersController {
   async index (request: Request, response: Response) {
@@ -10,11 +13,15 @@ class UsersController {
 
   async store (request: Request, response: Response) {
     const { username, password } = request.body
+    const userUuid = uuidv4()
+
+    const hashedPassword = await hashPassword(password)
 
     try {
       const registerResponse = await dbConnection('users').insert({
+        id: userUuid,
         username,
-        password
+        password: hashedPassword
       })
 
       if (registerResponse) {
