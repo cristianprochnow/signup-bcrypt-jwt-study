@@ -1,0 +1,11 @@
+{
+  "name": "SignUpBcrypt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "cristianprochnow <cristianprochnow@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.57",
+    "typescript": "^3.9.7"
+  }
+}
