@@ -9,10 +9,10 @@
 # Roadmap
 
 - [x] Create route for Sign Up
-- [] Improve route for Sign Up
-  - [] Add uuid
-  - [] Add Bcrypt
-- [] Process data
-- [] Store in database
+- [x] Improve route for Sign Up
+  - [x] Add uuid
+  - [x] Add Bcrypt
+- [x] Process data
+- [x] Store in database
 - [] Create route for Log In
 - [] Create Middleware
