@@ -17,6 +17,13 @@ class UsersController {
 
     const hashedPassword = await hashPassword(password)
 
+    console.log({
+      userUuid,
+      username,
+      password,
+      hashedPassword
+    })
+
     try {
       const registerResponse = await dbConnection('users').insert({
         id: userUuid,
@@ -27,7 +34,7 @@ class UsersController {
       if (registerResponse) {
         return response.status(201).send('User registered successfully!')
       } else {
-        throw new Error('Ooops... Do not have been possible register this user.')
+        throw new Error()
       }
     } catch (error) {
       return response.status(400).send(error)
