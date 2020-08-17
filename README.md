@@ -53,9 +53,28 @@ npm knex:migrate
 yarn knex:migrate
 ```
 
-5. Set up the workspace in Insomnia
+5. Set up environment variables
+
+- Create a file with name `.env`, put the variable `SECRET_KEY` inside this one and then set a value. Example:
+```
+// example #1
+SECRET_KEY=bacon123
+
+// example #2
+SECRET_KEY=vnfnviinvreivn
+
+// example #3
+SECRET_KEY=ce83bebe-9dbc-4f80-89a4-96ffc98beedd
+
+// example #4
+SECRET_KEY=$2b$12$OCScM5a3x4ZYiqYQ2dIF1uo0bYdKjvMcvnKV35PXwu8TDDWRgd5I2
+```
+
+6. Set up the workspace in Insomnia
 
 [![Run in Insomnia][imsomnia-button]][insomnia-url]
+
+**It's done! 🎉**
 
 # 🛣 Roadmap
 
