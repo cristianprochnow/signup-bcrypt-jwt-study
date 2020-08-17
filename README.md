@@ -12,6 +12,7 @@
 - Knex
 - SQLite
 - Json Web Token (JWT)
+- Dotenv
 
 # 🏁 Getting started
 
