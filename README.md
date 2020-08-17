@@ -2,9 +2,7 @@
 
 **A simple study case about how Bcrypt and JWT works in a register or authentication.**
 
-[![Run in Insomnia][imsomnia-button]][insomnia-url]
-
-## 🧱 Made with
+## 🧰 Made with
 
 - TypeScript
 - Node
@@ -15,16 +13,57 @@
 - SQLite
 - Json Web Token (JWT)
 
-# 🧰 Setup
+# 🏁 Getting started
+
+1. Clone this repository
+```bash
+git clone https://github.com/cristianprochnow/signup-bcrypt-jwt-study.git
+```
+
+2. Install packages
+
+**NPM**
+```
+npm install
+```
+**Yarn**
+```
+yarn
+```
+
+3. Start server
+
+**NPM**
+```
+npm dev
+```
+**Yarn**
+```
+yarn dev
+```
+
+4. Make the migrations for database
+
+**NPM**
+```
+npm knex:migrate
+```
+**Yarn**
+```
+yarn knex:migrate
+```
+
+5. Set up the workspace in Insomnia
+
+[![Run in Insomnia][imsomnia-button]][insomnia-url]
+
+# 🛣 Roadmap
 
 - [x] Add TS setup
 - [x] Init TS
 - [x] Add `ts-node-dev` script
 - [x] Add ESLint
 - [x] Add database
-
-# 🛣 Roadmap
-
 - [x] Create route for Sign Up
 - [x] Improve route for Sign Up
   - [x] Add uuid
@@ -39,6 +78,8 @@
   - [x] Add JWT to login
 - [x] Create Middleware
   - [x] Translate data from token
+
+_Made with ♥. Enjoy it!_
 
 [imsomnia-button]: https://insomnia.rest/images/run.svg
 [insomnia-url]: https://insomnia.rest/run/?label=SignupBcrypt&uri=https%3A%2F%2Fgithub.com%2Fcristianprochnow%2Fsignup-bcrypt-jwt-study%2Fblob%2Fmaster%2FInsomnia.json
